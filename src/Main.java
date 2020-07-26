@@ -2,21 +2,22 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] arg) throws FileNotFoundException {
+    public static void main(String[] arg)  {
+        new Main().entrance();
+
 
 
 
 
     }
     ArrayList<TwoPort> elements = new ArrayList<TwoPort>();
-    void Entrance () {
+    void entrance () {
         File file = new File("entrance.txt") ;
         BufferedReader in;
         try {
             in = new BufferedReader(new FileReader(file));
             String temp;
             while (!(temp = in.readLine()).equals("END")) {
-
                 if (temp.charAt(0) != '*') {
                     if (temp.charAt(0) == 'R'){
                         elements.add(new Resistance(temp));

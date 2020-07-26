@@ -2,8 +2,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class TwoPort {
-    Node startNode ;
-    Node endNode ;
+    String startNode ;
+    String endNode ;
     String name;
     double value;
     double toDouble (String input){
@@ -34,13 +34,11 @@ public abstract class TwoPort {
     }
     TwoPort(){}
     TwoPort(String input) {
-        Pattern pattern = Pattern.compile("[A-Z](.*)\\s+(.*)\\s+(.*)\\s+(\\S).*");
-        Matcher matcher = pattern.matcher(input);
-        while (matcher.find()) {
-            name = matcher.group(0);
-            startNode.name = matcher.group(1);
-            endNode.name = matcher.group(2);
-            value = toDouble(matcher.group(3));
-        }
+        input = input.replaceAll("\\s+"," ");
+        String[] temp = input.split(" ");
+        name = temp[0];
+        startNode = temp[1];
+        endNode = temp[2];
+        value = toDouble(temp[3]);
     }
 }
