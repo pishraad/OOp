@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Main {
+    private static Object VoltageSource;
+    private static Object VoltageDependant;
+
     public static void main(String[] arg)  {
         Main.entrance();
 //        for(int i=0 ; i<nodes.size();i++){
@@ -12,7 +15,6 @@ public class Main {
 //        }
 
 
-        //dokw0k0w
 
 
     }
@@ -52,21 +54,50 @@ public class Main {
     }
 
     static void unionMaker(){
-        ArrayList<Node> queue = new ArrayList<>();
+        for (int i=0;i<nodes.size();i++) {
+            nodes.get(i).union = i ;
+            nodes.get(i).added = false ;
+        }
         int groundIndex = 0 ;
         for (int i=0;i<nodes.size();i++){
             if (nodes.get(i).isGround)
                 groundIndex = i ;
         }
-        queue.add(nodes.get(groundIndex)) ;
-//        for (int i=0;i<nodes.get(groundIndex).neighbor.size();i++){
-//
-//        }
-        int addedNode = 1 ;
-        while (addedNode<nodes.size()){
-            for (int i=0;i<nodes.get(addedNode).neighbor.size();i++){
+
+
+        for (int j=0;j<nodes.get(groundIndex).connected.size();j++) {
+            if (nodes.get(groundIndex).connected.get(j) == VoltageSource || nodes.get(groundIndex).connected.get(j) == VoltageDependant) {
+
+                String anoderNode ;
+                if (nodes.get(groundIndex).connected.get(j).startNode.equals(nodes.get(groundIndex).name))
+                    anoderNode = nodes.get(groundIndex).connected.get(j).endNode  ;
+                else
+                    anoderNode = nodes.get(groundIndex).connected.get(j).startNode  ;
+
+                for (int ii=0;ii<nodes.size();ii++){
+                    if (anoderNode.equals(nodes.get(ii).name)){
+                        nodes.get(ii).added = true ;
+                        nodes.get(ii).union = groundIndex ;
+                    }
+                }
 
             }
         }
+
+        for (int i=0;i<nodes.get(groundIndex).neighbor.size();i++){
+            if (!nodes.get(groundIndex).neighbor.get(i).added)
+                nodes.get(groundIndex).neighbor.get(i).added = true ;
+        }
+//        ArrayList<Node> queue = new ArrayList<>();
+//        queue.add(nodes.get(groundIndex)) ;
+////        for (int i=0;i<nodes.get(groundIndex).neighbor.size();i++){
+////
+////        }
+//        int addedNode = 1 ;
+//        while (addedNode<nodes.size()){
+//            for (int i=0;i<nodes.get(addedNode).neighbor.size();i++){
+//
+//            }
+//        }
     }
 }

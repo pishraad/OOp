@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Node extends Object{
     String name;
     double[] voltage;
-    boolean added = false ;
+    boolean added ;
     boolean isGround = false ;
     int union ;
     ArrayList<Node> neighbor = new ArrayList<>() ;
