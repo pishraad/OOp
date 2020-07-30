@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dc5ef5d-9a2a-4925-9ef4-c2f6bf657f78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Union.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TwoPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwoPort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
   </component>
   <component name="ProjectId" id="1fDRi91pXuqIJ3lUcMtz3Bg8XO3" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -142,22 +142,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596025881961" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1595776190665">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1596115018035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595776190665" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1595776190664">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596115018035" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1596115018034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595776190664" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1595776190664">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596115018034" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1596115018034">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595776190664" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1595776190664">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596115018034" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1596115018035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595776190664" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596115018035" />
     <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1596028583631">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

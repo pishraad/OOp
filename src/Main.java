@@ -2,24 +2,25 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Main {
+
+    static ArrayList<TwoPort> elements = new ArrayList<>();
+    static ArrayList<Node> nodes = new ArrayList<>() ;
     private static Object VoltageSource;
     private static Object VoltageDependant;
 
     public static void main(String[] arg)  {
-        Main.entrance();
-//        for(int i=0 ; i<nodes.size();i++){
-//            System.out.println(nodes.get(i).name + "node name");
-//            for(int j=0 ; j<nodes.get(i).neighbor.size();j++){
-//                System.out.println(nodes.get(i).neighbor.get(j).name);
-//            }
-//        }
-
-
-
-
+        entrance();
+       //for(Node node : nodes){
+       //    System.out.println("node name: "+ node.name );
+       //    for(Node n : node.neighbor){
+       //        System.out.println(n.name);
+       //    }
+       //    for(TwoPort e : node.connected){
+       //        System.out.println(e.name);
+       //        System.out.println(e.value);
+       //    }
+       //}
     }
-   static ArrayList<TwoPort> elements = new ArrayList<TwoPort>();
-    static ArrayList<Node> nodes = new ArrayList<>() ;
 
     static void entrance () {
         File file = new File("entrance.txt") ;
@@ -29,15 +30,15 @@ public class Main {
             String temp;
             while (!(temp = in.readLine()).equals("END")) {
                 if (temp.charAt(0) != '*') {
-                    if (temp.charAt(0) == 'R'){
+                    if (temp.charAt(0) == 'R' || temp.charAt(0) == 'r'){
                         elements.add(new Resistance(temp));
                         TwoPort.addNode(elements.get(elements.size()-1),nodes);
                     }
-                    if (temp.charAt(0) == 'C'){
+                    if (temp.charAt(0) == 'C' || temp.charAt(0) == 'c'){
                         elements.add(new Capacitor(temp));
                         TwoPort.addNode(elements.get(elements.size()-1),nodes);
                     }
-                    if (temp.charAt(0) == 'L'){
+                    if (temp.charAt(0) == 'L' || temp.charAt(0) == 'l'){
                         elements.add(new Inductor(temp));
                         TwoPort.addNode(elements.get(elements.size()-1),nodes);
                     }
