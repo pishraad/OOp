@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dc5ef5d-9a2a-4925-9ef4-c2f6bf657f78" name="Default Changelist" comment="">
+    <list default="true" id="bd6e3980-5915-44c5-9277-c46f6f6eac45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CurrentDependant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentDependant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Erors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Erors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inductor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TwoPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwoPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VoltageDependant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VoltageDependant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +69,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9dc5ef5d-9a2a-4925-9ef4-c2f6bf657f78" name="Default Changelist" comment="" />
+      <changelist id="bd6e3980-5915-44c5-9277-c46f6f6eac45" name="Default Changelist" comment="" />
       <created>1595750800095</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -103,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596028578881</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="eror2,3">
+      <created>1596117748609</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1596117748609</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,14 +137,15 @@
     <MESSAGE value="3rd time" />
     <MESSAGE value="initializing classes" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="eror2,3" />
+    <option name="LAST_COMMIT_MESSAGE" value="eror2,3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1596028578190">
+    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1596117748031">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596027284302" />
-    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1596028578190" />
+    <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1596117748031" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1596026129537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -158,16 +170,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596115018035" />
-    <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1596028583631">
+    <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1596117752546">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595772769123" />
-    <state x="361" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1596028583631" />
-    <state x="465" y="247" key="com.intellij.ide.util.TipDialog" timestamp="1596092961922">
+    <state x="361" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1596117752546" />
+    <state x="465" y="247" key="com.intellij.ide.util.TipDialog" timestamp="1596181273868">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596027198728" />
-    <state x="465" y="247" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1596092961922" />
+    <state x="465" y="247" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1596181273868" />
     <state x="578" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596028473647">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

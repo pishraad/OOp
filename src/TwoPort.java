@@ -9,6 +9,18 @@ public abstract class TwoPort {
     double value;
     char type;
 
+    public int current(TwoPort twoPort){
+        int current = 0 ;
+
+        return current ;
+    }
+
+    public int voltage(TwoPort twoPort){
+        int voltage = 0 ;
+
+        return voltage ;
+    }
+
     TwoPort(){}
     TwoPort(String input) {
         input = input.replaceAll("\\s+"," ");

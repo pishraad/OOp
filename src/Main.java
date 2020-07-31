@@ -59,6 +59,26 @@ public class Main {
                         }
                     }
 
+                    if (temp.charAt(0) == 'F' || temp.charAt(0) == 'f'){
+                        CurrentDependant currentDependant = new CurrentDependant(temp) ;
+                        currentDependant.CCCC(currentDependant,elements);
+                        elements.add(currentDependant);
+                        TwoPort.addNode(elements.get(elements.size() - 1), nodes);
+                    }
+
+                    if (temp.charAt(0) == 'G' || temp.charAt(0) == 'g') {
+
+                    }
+
+                    if (temp.charAt(0) == 'H' || temp.charAt(0) == 'h') {
+
+                    }
+
+                    if (temp.charAt(0) == 'E' || temp.charAt(0) == 'e') {
+
+                    }
+
+
                 }
 
             }
