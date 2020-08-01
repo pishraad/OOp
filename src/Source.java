@@ -7,6 +7,7 @@ public class Source extends TwoPort {
         input = input.replaceAll("\\s+"," ");
         String[] temp = input.split(" ");
         name = temp[0];
+        type = temp[0].charAt(0);
         startNode = temp[1];
         endNode = temp[2];
         value = toDouble(temp[3]);

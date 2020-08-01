@@ -3,9 +3,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class TwoPort {
+
+    String name;
     String startNode ;
     String endNode ;
-    String name;
+    Node startTerminal ;
+    Node endTerminal ;
     double value;
     char type;
 
@@ -63,30 +66,6 @@ public abstract class TwoPort {
             out = Double.parseDouble(input);
         }
         return out;
-    }
-
-    static void addNode(TwoPort element, ArrayList<Node> nodes){
-        int startNodeIndex = -1, endNodeIndex = -1;
-        for (int i=0;i<nodes.size();i++){
-            if (nodes.get(i).name.equals(element.startNode)){
-                startNodeIndex = i ;
-            }
-            else if (nodes.get(i).name.equals(element.endNode)) {
-                endNodeIndex = i ;
-            }
-        }
-        if (startNodeIndex < 0) {
-            nodes.add(new Node(element.startNode));
-            startNodeIndex = nodes.size() - 1;
-        }
-        if (endNodeIndex < 0) {
-            nodes.add(new Node(element.endNode));
-            endNodeIndex = nodes.size() - 1;
-        }
-        nodes.get(startNodeIndex).connected.add(element);
-        nodes.get(endNodeIndex).connected.add(element);
-        nodes.get(startNodeIndex).neighbor.add(nodes.get(endNodeIndex)) ;
-        nodes.get(endNodeIndex).neighbor.add(nodes.get(startNodeIndex)) ;
     }
 
 }

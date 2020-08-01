@@ -1,26 +1,41 @@
-//import java.util.ArrayList;
-//
-//public class Union {
-//
-//    public void setting(ArrayList<Node> node){
-//        for (int i=0;i<node.size();i++) {
-//            node.get(i).union = i ;
-//            node.get(i).added = false ;
-//        }
-//    }
-//
-//    public ArrayList<Union> unionMaker(ArrayList<Node> node){
-//        ArrayList<Union> unionss = new ArrayList<>() ;
-//        int groundIndex = 0 ;
-//        for (int i=0;i<node.size();i++){
-//            if (node.get(i).isGround)
-//                groundIndex = i ;
-//                unionss.add(node.get(i)) ;
-//        }
-//        for (int i=0;i<nodes.get(groundIndex).neighbor.size();i++){
-//            unionss.add(nodes.get(groundIndex).neighbor.get(i)) ;
-//            nodes.get(groundIndex).neighbor.get(i).added = true ;
-//        }
-//        return unionss ;
-//    }
-//}
+import java.util.ArrayList;
+
+public class Union {
+    int name;
+    ArrayList<Node> nodes = new ArrayList<>();
+
+    Union(int name){
+        this.name = name;
+    }
+
+    static ArrayList<Union> unionMaker(ArrayList<TwoPort> elements, ArrayList<Node> nodes) {
+        ArrayList<Union> unions = new ArrayList<>() ;
+        boolean isDone = false;
+        while (!isDone) {
+            isDone = true;
+            for (TwoPort element : elements) {
+                if (element.type == 'V' || element.type == 'v' /*to be continued*/) {
+                    if (element.startTerminal.union != element.endTerminal.union) {
+                        isDone = false;
+                        element.endTerminal.union = element.startTerminal.union;
+                    }
+                }
+            }
+        }
+        Union union;
+        for(Node node : nodes){
+            if(!node.added) {
+                union = new Union(node.union);
+                for (Node otherNode : nodes) {
+                    if (otherNode.union == node.union) {
+                        union.nodes.add(otherNode);
+                        otherNode.added = true;
+                    }
+                }
+                unions.add(union);
+            }
+        }
+        return unions;
+    }
+
+}
