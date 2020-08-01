@@ -6,6 +6,7 @@ public class Main {
     static ArrayList<TwoPort> elements = new ArrayList<>();
     static ArrayList<Node> nodes = new ArrayList<>() ;
     static ArrayList<Union> unions = new ArrayList<>() ;
+    static double dv , di , dt , T ;
 
     public static void main(String[] arg)  {
         entrance();
@@ -83,6 +84,26 @@ public class Main {
 
                     if (temp.charAt(0) == 'E' || temp.charAt(0) == 'e') {
 
+                    }
+
+                    if (temp.substring(0,2).equals("dv")) {
+                        temp = temp.substring(2) ;
+                        dv = TwoPort.toDouble(temp.trim()) ;
+                    }
+
+                    if (temp.substring(0,2).equals("di")) {
+                        temp = temp.substring(2) ;
+                        di = TwoPort.toDouble(temp.trim()) ;
+                    }
+
+                    if (temp.substring(0,2).equals("dt")) {
+                        temp = temp.substring(2) ;
+                        dt = TwoPort.toDouble(temp.trim()) ;
+                    }
+
+                    if (temp.substring(0,1).equals("T")) {
+                        temp = temp.substring(1) ;
+                        T = TwoPort.toDouble(temp.trim()) ;
                     }
 
 

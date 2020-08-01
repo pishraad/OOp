@@ -35,7 +35,7 @@ public abstract class TwoPort {
         value = toDouble(temp[3]);
     }
 
-    double toDouble (String input){
+   static double toDouble (String input){
         double out;
         if(Character.isAlphabetic(input.charAt(input.length()-1))) {
             out = Double.parseDouble(input.substring(0,input.length()-1));

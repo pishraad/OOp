@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bd6e3980-5915-44c5-9277-c46f6f6eac45" name="Default Changelist" comment="eror2,3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Branch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Erors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Erors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TwoPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwoPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Union.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Union.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/circuit.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
