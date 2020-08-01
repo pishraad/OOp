@@ -63,9 +63,31 @@ public class Erors {
 
 
 
-    public void eror4(){
+    public void eror4(ArrayList<Node> nodes){
 
+        boolean eror = false ;
+        boolean existingGround = false ;
+        boolean zeroVoltage = false ;
 
+        for (Node i : nodes){
+            if (i.isGround) {
+                existingGround = true;
+                for (int j=0;j<i.connected.size();j++)
+                if (i.connected.get(j).type == 'V' ){
+                    if (i.connected.get(j).startNode.equals("0") && i.connected.get(j).endNode.equals("0")){
+                        if (i.connected.get(j).value != 0 )
+                            zeroVoltage = true ;
+                    }
+
+                }
+            }
+        }
+
+        if (!existingGround || zeroVoltage)
+            eror = true ;
+
+        if (eror)
+            System.out.println("eror -4");
 
     }
 

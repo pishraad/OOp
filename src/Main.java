@@ -28,10 +28,14 @@ public class Main {
         try {
             in = new BufferedReader(new FileReader(file));
             String temp;
+            boolean eror11 = false , eror12 = false , eror13 = false , eror14 = false ;
+
             while (!(temp = in.readLine()).equals("END")) {
                 if (temp.charAt(0) != '*') {
 
+                    boolean correct = false ;
                     if (temp.charAt(0) == 'R' || temp.charAt(0) == 'r'){
+                        correct = true ;
                         Resistance resistance = new Resistance(temp) ;
                         if ((resistance.value<0)) // || reshte be jaye adad || adam tatbigh ba for gereftan
                             System.out.println("eror line .....");
@@ -42,6 +46,7 @@ public class Main {
                     }
 
                     if (temp.charAt(0) == 'C' || temp.charAt(0) == 'c'){
+                        correct = true ;
                         Capacitor capacitor = new Capacitor(temp) ;
                         if (capacitor.value<0)
                             System.out.println("eror line .....");
@@ -52,12 +57,14 @@ public class Main {
                     }
 
                     if (temp.charAt(0) == 'V' || temp.charAt(0) == 'v') {
+                        correct = true ;
                         elements.add(new VoltageSource(temp));
                         Node.addNode(elements.get(elements.size()-1),nodes);
 
                     }
 
                     if (temp.charAt(0) == 'L' || temp.charAt(0) == 'l'){
+                        correct = true ;
                         Inductor inductor = new Inductor(temp) ;
                         if (inductor.value<0)
                             System.out.println("eror line .....");
@@ -68,6 +75,7 @@ public class Main {
                     }
 
                     if (temp.charAt(0) == 'F' || temp.charAt(0) == 'f'){
+                        correct = true ;
                         CurrentDependant currentDependant = new CurrentDependant(temp) ;
                         currentDependant.CCCC(currentDependant,elements);
                         elements.add(currentDependant);
@@ -75,41 +83,56 @@ public class Main {
                     }
 
                     if (temp.charAt(0) == 'G' || temp.charAt(0) == 'g') {
+                        correct = true ;
 
                     }
 
                     if (temp.charAt(0) == 'H' || temp.charAt(0) == 'h') {
+                        correct = true ;
 
                     }
 
                     if (temp.charAt(0) == 'E' || temp.charAt(0) == 'e') {
+                        correct = true ;
 
                     }
 
                     if (temp.substring(0,2).equals("dv")) {
+                        eror11 = true ;
+                        correct = true ;
                         temp = temp.substring(2) ;
                         dv = TwoPort.toDouble(temp.trim()) ;
                     }
 
                     if (temp.substring(0,2).equals("di")) {
+                        eror12 = true ;
+                        correct = true ;
                         temp = temp.substring(2) ;
                         di = TwoPort.toDouble(temp.trim()) ;
                     }
 
                     if (temp.substring(0,2).equals("dt")) {
+                        eror13 = true ;
+                        correct = true ;
                         temp = temp.substring(2) ;
                         dt = TwoPort.toDouble(temp.trim()) ;
                     }
 
                     if (temp.substring(0,1).equals("T")) {
+                        eror14 = true ;
+                        correct = true ;
                         temp = temp.substring(1) ;
                         T = TwoPort.toDouble(temp.trim()) ;
                     }
 
-
+                    if (!correct)
+                        System.out.println("eror line .....");
                 }
 
             }
+            if (!eror11 || !eror12 || !eror13 || !eror14)
+                System.out.println("eror -1");
+
         } catch (IOException e) {
             e.printStackTrace();
         }
