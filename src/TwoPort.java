@@ -11,6 +11,7 @@ public abstract class TwoPort {
     Node endTerminal ;
     double value;
     char type;
+    boolean isDraw = false ;
 
     public int current(TwoPort twoPort){
         int current = 0 ;
