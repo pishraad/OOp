@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -10,6 +11,36 @@ public class Main {
 
     public static void main(String[] arg)  {
         entrance();
+
+        Scanner consool = new Scanner(System.in) ;
+        String consol = consool.nextLine() ;
+        while (!consol.equals("END")){
+
+            String node1 , node2 ;
+            double T ;
+            consol = consol.replaceAll("\\s+"," ");
+            String[] temp = consol.split(" ");
+            node1 = temp[0];
+            node2 = temp[1];
+            T = TwoPort.toDouble(temp[2]);
+
+            boolean existingNode1 = false , existingNode2 = false ;
+            for (Node i : nodes){
+                if (i.name.equals(node1)){
+                    existingNode1 = true ;
+
+                }
+                if (i.name.equals(node2)){
+                    existingNode2 = true ;
+
+                }
+            }
+
+            if (!existingNode1 || !existingNode2 )
+                System.out.println("ERROR");
+
+            consol = consool.nextLine() ;
+        }
         //for(Node node : nodes){
         //    System.out.println("node name: "+ node.name );
         //    System.out.println(node.union);
@@ -20,6 +51,32 @@ public class Main {
         //        System.out.println("    node name:"+ node.name );
         //    }
         //}
+    }
+
+    static void fileWriter(){
+
+        try{
+            // Create file
+            FileWriter fstream = new FileWriter(System.currentTimeMillis() + "out.txt");
+            BufferedWriter out = new BufferedWriter(fstream);
+
+            int whichNode = 0 ;
+            for (int i=0;i<nodes.size();i++){
+                for (Node j : nodes){
+                    if (j.name.equals(String.valueOf(whichNode))){
+                        out.write(whichNode + " " /*voltages */);
+                    }
+                }
+                whichNode ++ ;
+                out.write("\n");
+            }
+
+            //Close the output stream
+            out.close();
+        }catch (Exception e){//Catch exception if any
+            System.err.println("Error: " + e.getMessage());
+        }
+
     }
 
     static void entrance () {
