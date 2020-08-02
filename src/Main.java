@@ -10,37 +10,40 @@ public class Main {
     static double dv , di , dt , T ;
 
     public static void main(String[] arg)  {
-        entrance();
+        Graphic graphic = new Graphic(nodes);
 
-        Scanner consool = new Scanner(System.in) ;
-        String consol = consool.nextLine() ;
-        while (!consol.equals("END")){
+//        entrance();
+//
+//        Scanner consool = new Scanner(System.in) ;
+//        String consol = consool.nextLine() ;
+//        while (!consol.equals("END")){
+//
+//            String node1 , node2 ;
+//            double T ;
+//            consol = consol.replaceAll("\\s+"," ");
+//            String[] temp = consol.split(" ");
+//            node1 = temp[0];
+//            node2 = temp[1];
+//            T = TwoPort.toDouble(temp[2]);
+//
+//            boolean existingNode1 = false , existingNode2 = false ;
+//            for (Node i : nodes){
+//                if (i.name.equals(node1)){
+//                    existingNode1 = true ;
+//
+//                }
+//                if (i.name.equals(node2)){
+//                    existingNode2 = true ;
+//
+//                }
+//            }
+//
+//            if (!existingNode1 || !existingNode2 )
+//                System.out.println("ERROR");
+//
+//            consol = consool.nextLine() ;
+//        }
 
-            String node1 , node2 ;
-            double T ;
-            consol = consol.replaceAll("\\s+"," ");
-            String[] temp = consol.split(" ");
-            node1 = temp[0];
-            node2 = temp[1];
-            T = TwoPort.toDouble(temp[2]);
-
-            boolean existingNode1 = false , existingNode2 = false ;
-            for (Node i : nodes){
-                if (i.name.equals(node1)){
-                    existingNode1 = true ;
-
-                }
-                if (i.name.equals(node2)){
-                    existingNode2 = true ;
-
-                }
-            }
-
-            if (!existingNode1 || !existingNode2 )
-                System.out.println("ERROR");
-
-            consol = consool.nextLine() ;
-        }
         //for(Node node : nodes){
         //    System.out.println("node name: "+ node.name );
         //    System.out.println(node.union);
