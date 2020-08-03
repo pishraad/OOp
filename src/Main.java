@@ -11,6 +11,8 @@ public class Main {
 
     public static void main(String[] arg)  {
         Graphic graphic = new Graphic(nodes);
+        char[] element = {'R',' ',' '} ;
+        graphic.drawElement(0,6,element);
 
 //        entrance();
 //

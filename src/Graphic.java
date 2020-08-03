@@ -57,21 +57,53 @@ public class Graphic {
         else
             verticalStraight = 'V' ;
 
+        if (element[1]==' '){
 
+            if (element[0] == 'R' && verticalStraight == 'S'){
+                 ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
+                 JLabel E = new JLabel(e);
+                 if (j>i)
+                     E.setBounds((i%6)*100+100, 500-(i/6)*100,100,16);
+                 if (i<j)
+                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,16);
+                 A.add(E) ;
+            }
+            else if (element[0] == 'R' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 500-(i/6)*100,100,17);
+                if (i<j)
+                    E.setBounds((j%6)*100+200, 500-(j/6)*100,17,100);
+                A.add(E) ;
+            }
 
-//        if (type == 'R' && verticalStraight == 'S'){
-//            ImageIcon r = new ImageIcon("Rstraight.PNG","PNG") ;
-//            JLabel R = new JLabel(r);
-//            R.setBounds(i,j,122,16);
-//            A.add(R) ;
-//        }
-//        else if (type == 'R' && verticalStraight == 'V'){
-//            ImageIcon r = new ImageIcon("Rvertical.PNG","PNG") ;
-//            JLabel R = new JLabel(r);
-//            R.setBounds(i,j,16,122);
-//            A.add(R) ;
-//        }
+            if (element[0] == 'L' && verticalStraight == 'S'){
+                ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 500-(i/6)*100,100,16);
+                if (i<j)
+                    E.setBounds((j%6)*100+100, 500-(j/6)*100,100,16);
+                A.add(E) ;
+            }
+            else if (element[0] == 'L' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 500-(i/6)*100,100,16);
+                if (i<j)
+                    E.setBounds((j%6)*100+100, 500-(j/6)*100,100,16);
+                A.add(E) ;
+            }
 
+        }
+        else if (element[2]==' '){
+
+        }
+        else {
+
+        }
 
 
     }
