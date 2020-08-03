@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
+import java.awt.geom.Line2D;
 
 public class Graphic {
     JFrame A ;
@@ -65,6 +66,10 @@ public class Graphic {
 
         A.setLayout(null);
         A.setVisible(true);
+    }
+
+    public void paint(Graphics g){
+        g.drawLine(0, 0, 100, 100);
     }
 
     public void drawElement(int i , int j ,char[] element){
@@ -138,6 +143,127 @@ public class Graphic {
 
         }
         else if (element[2]==' '){
+            //A.add(paint());
+
+
+            if (element[0] == 'R' && verticalStraight == 'S'){
+                ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 480-(i/6)*100,100,16);
+                if (i>j)
+                    E.setBounds((j%6)*100+100, 480-(j/6)*100,100,16);
+                A.add(E) ;
+            }
+            else if (element[0] == 'R' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j<i)
+                    E.setBounds((i%6)*100+75, 500-(i/6)*100,17,100);
+                if (i<j)
+                    E.setBounds((j%6)*100+75, 500-(j/6)*100,17,100);
+                A.add(E) ;
+            }
+
+            if (element[0] == 'L' && verticalStraight == 'S'){
+                ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 480-(i/6)*100,100,20);
+                if (i>j)
+                    E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
+                A.add(E) ;
+            }
+            else if (element[0] == 'L' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j<i)
+                    E.setBounds((i%6)*100+75, 500-(i/6)*100,20,100);
+                if (i<j)
+                    E.setBounds((j%6)*100+75, 500-(j/6)*100,20,100);
+                A.add(E) ;
+            }
+
+            if (element[0] == 'C' && verticalStraight == 'S'){
+                ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 480-(i/6)*100,100,20);
+                if (i>j)
+                    E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
+                A.add(E) ;
+            }
+            else if (element[0] == 'C' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j<i)
+                    E.setBounds((i%6)*100+75, 500-(i/6)*100,20,100);
+                if (i<j)
+                    E.setBounds((j%6)*100+75, 500-(j/6)*100,20,100);
+                A.add(E) ;
+            }
+
+            //othhers
+            if (element[1] == 'R' && verticalStraight == 'S'){
+                ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 500-(i/6)*100,100,16);
+                if (i>j)
+                    E.setBounds((j%6)*100+100, 500-(j/6)*100,100,16);
+                A.add(E) ;
+            }
+            else if (element[1] == 'R' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j<i)
+                    E.setBounds((i%6)*100+95, 500-(i/6)*100,17,100);
+                if (i<j)
+                    E.setBounds((j%6)*100+95, 500-(j/6)*100,17,100);
+                A.add(E) ;
+            }
+
+            if (element[1] == 'L' && verticalStraight == 'S'){
+                ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 500-(i/6)*100,100,20);
+                if (i>j)
+                    E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
+                A.add(E) ;
+            }
+            else if (element[1] == 'L' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j<i)
+                    E.setBounds((i%6)*100+95, 500-(i/6)*100,20,100);
+                if (i<j)
+                    E.setBounds((j%6)*100+95, 500-(j/6)*100,20,100);
+                A.add(E) ;
+            }
+
+            if (element[1] == 'C' && verticalStraight == 'S'){
+                ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j>i)
+                    E.setBounds((i%6)*100+100, 500-(i/6)*100,100,20);
+                if (i>j)
+                    E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
+                A.add(E) ;
+            }
+            else if (element[1] == 'C' && verticalStraight == 'V'){
+                ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
+                JLabel E = new JLabel(e);
+                if (j<i)
+                    E.setBounds((i%6)*100+95, 500-(i/6)*100,20,100);
+                if (i<j)
+                    E.setBounds((j%6)*100+95, 500-(j/6)*100,20,100);
+                A.add(E) ;
+            }
+
+
+
+
 
         }
         else {
