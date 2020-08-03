@@ -10,12 +10,14 @@ public class Main {
     static double dv , di , dt , T ;
 
     public static void main(String[] arg)  {
-        Graphic graphic = new Graphic(nodes);
-        char[] element = {'R',' ',' '} ;
-        graphic.drawElement(0,6,element);
+//        Graphic graphic = new Graphic(nodes);
+//        char[] element = {'R',' ',' '} ;
+//        graphic.drawElement(0,6,element);
 
-//        entrance();
-//
+        entrance();
+        Graphic graphic = new Graphic(nodes);
+
+
 //        Scanner consool = new Scanner(System.in) ;
 //        String consol = consool.nextLine() ;
 //        while (!consol.equals("END")){
@@ -39,6 +41,7 @@ public class Main {
 //
 //                }
 //            }
+//
 //
 //            if (!existingNode1 || !existingNode2 )
 //                System.out.println("ERROR");
