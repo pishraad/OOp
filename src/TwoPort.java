@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public abstract class TwoPort {
 
@@ -12,6 +10,10 @@ public abstract class TwoPort {
     double value;
     char type;
     boolean isDraw = false ;
+    static double dv , di , dt , t ;
+    ArrayList<Properties> properties = new ArrayList<>();
+
+    abstract double currentCalculator();
 
     public int current(TwoPort twoPort){
         int current = 0 ;
@@ -30,7 +32,6 @@ public abstract class TwoPort {
         input = input.replaceAll("\\s+"," ");
         String[] temp = input.split(" ");
         name = temp[0];
-        type = temp[0].charAt(0);
         startNode = temp[1];
         endNode = temp[2];
         value = toDouble(temp[3]);
@@ -69,4 +70,16 @@ public abstract class TwoPort {
         return out;
     }
 
+
+}
+class Properties{
+
+    double voltage;
+    double current;
+    double power;
+    double time;
+
+    Properties(double time){
+        this.time = time;
+    }
 }

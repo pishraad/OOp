@@ -7,15 +7,21 @@ public class Main {
     static ArrayList<TwoPort> elements = new ArrayList<>();
     static ArrayList<Node> nodes = new ArrayList<>() ;
     static ArrayList<Union> unions = new ArrayList<>() ;
-    static double dv , di , dt , T ;
+    static ArrayList<CurrentDependant> currentDependants = new ArrayList<>();
+    static ArrayList<VoltageDependant> voltageDependants = new ArrayList<>();
+    static double dv , di , dt , t ;
 
     public static void main(String[] arg)  {
-//        Graphic graphic = new Graphic(nodes);
-//        char[] element = {'R',' ',' '} ;
-//        graphic.drawElement(0,6,element);
 
         entrance();
-        Graphic graphic = new Graphic(nodes);
+        //Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
+        //solve.solver();
+
+        //Graphic graphic = new Graphic(nodes);
+        //Graphic graphic = new Graphic(nodes);
+        //char[] element = {'R',' ',' '} ;
+        //graphic.drawElement(0,6,element);
+
 
 
 //        Scanner consool = new Scanner(System.in) ;
@@ -42,23 +48,12 @@ public class Main {
 //                }
 //            }
 //
-//
 //            if (!existingNode1 || !existingNode2 )
 //                System.out.println("ERROR");
 //
 //            consol = consool.nextLine() ;
 //        }
 
-        //for(Node node : nodes){
-        //    System.out.println("node name: "+ node.name );
-        //    System.out.println(node.union);
-        //}
-        //for(Union union : unions){
-        //    System.out.println("union name: "+ union.name );
-        //    for(Node node : union.nodes){
-        //        System.out.println("    node name:"+ node.name );
-        //    }
-        //}
     }
 
     static void fileWriter(){
@@ -121,13 +116,6 @@ public class Main {
                         }
                     }
 
-                    if (temp.charAt(0) == 'V' || temp.charAt(0) == 'v') {
-                        correct = true ;
-                        elements.add(new VoltageSource(temp));
-                        Node.addNode(elements.get(elements.size()-1),nodes);
-
-                    }
-
                     if (temp.charAt(0) == 'L' || temp.charAt(0) == 'l'){
                         correct = true ;
                         Inductor inductor = new Inductor(temp) ;
@@ -139,27 +127,44 @@ public class Main {
                         }
                     }
 
+                    if (temp.charAt(0) == 'V' || temp.charAt(0) == 'v') {
+                        correct = true ;
+                        elements.add(new VoltageSource(temp));
+                        Node.addNode(elements.get(elements.size()-1),nodes);
+                    }
+
+                    if (temp.charAt(0) == 'I' || temp.charAt(0) == 'i') {
+                        correct = true ;
+                        elements.add(new CurrentSource(temp));
+                        Node.addNode(elements.get(elements.size()-1),nodes);
+                    }
+
                     if (temp.charAt(0) == 'F' || temp.charAt(0) == 'f'){
                         correct = true ;
-                        CurrentDependant currentDependant = new CurrentDependant(temp) ;
-                        currentDependant.CCCC(currentDependant,elements);
-                        elements.add(currentDependant);
+                        elements.add(new CDCurrentSource(temp));
                         Node.addNode(elements.get(elements.size() - 1), nodes);
+                        currentDependants.add((CurrentDependant) elements.get(elements.size() - 1));
                     }
 
                     if (temp.charAt(0) == 'G' || temp.charAt(0) == 'g') {
                         correct = true ;
-
+                        elements.add(new VDCurrentSource(temp));
+                        Node.addNode(elements.get(elements.size() - 1), nodes);
+                        voltageDependants.add((VoltageDependant) elements.get(elements.size() - 1));
                     }
 
                     if (temp.charAt(0) == 'H' || temp.charAt(0) == 'h') {
                         correct = true ;
-
+                        elements.add(new CDVoltageSource(temp));
+                        Node.addNode(elements.get(elements.size() - 1), nodes);
+                        currentDependants.add((CurrentDependant) elements.get(elements.size() - 1));
                     }
 
                     if (temp.charAt(0) == 'E' || temp.charAt(0) == 'e') {
                         correct = true ;
-
+                        elements.add(new VDVoltageSource(temp));
+                        Node.addNode(elements.get(elements.size() - 1), nodes);
+                        voltageDependants.add((VoltageDependant) elements.get(elements.size() - 1));
                     }
 
                     if (temp.substring(0,2).equals("dv")) {
@@ -183,11 +188,11 @@ public class Main {
                         dt = TwoPort.toDouble(temp.trim()) ;
                     }
 
-                    if (temp.substring(0,1).equals("T")) {
+                    if (temp.startsWith(".tran")) {
                         eror14 = true ;
                         correct = true ;
-                        temp = temp.substring(1) ;
-                        T = TwoPort.toDouble(temp.trim()) ;
+                        temp = temp.substring(5) ;
+                        t = TwoPort.toDouble(temp.trim()) ;
                     }
 
                     if (!correct)
@@ -201,9 +206,24 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        for(CurrentDependant currentDependant : currentDependants){
+            for(TwoPort elementDependant : elements){
+                if(elementDependant.name.equals(currentDependant.elementDependantName)){
+                    currentDependant.elementDependant = elementDependant;
+                }
+            }
+        }
+        for(VoltageDependant voltageDependant : voltageDependants){
+            for(Node node : nodes){
+                if(node.name.equals(voltageDependant.startDependantNode)){
+                    voltageDependant.startDependant = node;
+                }
+                else if (node.name.equals(voltageDependant.endDependantNode)){
+                    voltageDependant.endDependant = node;
+                }
+            }
+        }
         unions = Union.unionMaker(elements , nodes);
-        System.out.println("union");
     }
-
 
 }

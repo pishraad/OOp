@@ -6,8 +6,14 @@ public class Node extends Object{
     boolean added ;
     boolean isGround = false ;
     int union ;
+    Node parentNode;
+    ArrayList<Node> children = new ArrayList<>() ;
+    TwoPort connector;
+    boolean isConnectorInverse;
     ArrayList<Node> neighbor = new ArrayList<>() ;
     ArrayList<TwoPort> connected = new ArrayList<>() ;
+    static double dv , di , dt , t ;
+
 
     Node(String name) {
         this.name = name;
@@ -17,6 +23,10 @@ public class Node extends Object{
         if (name.equals("0")) {
             isGround = true ;
         }
+    }
+
+    void setParent(Node parent){
+        this.parentNode = parent;
     }
 
     static void addNode(TwoPort element, ArrayList<Node> nodes){

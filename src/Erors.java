@@ -101,3 +101,28 @@ public class Erors {
 
 
 }
+class Minus1Error  extends Exception {
+    public Minus1Error(){
+        super("Error -1");
+    }
+}
+class Minus2Error  extends Exception {
+    public Minus2Error(){
+        super("Error -2");
+    }
+}
+class Minus3Error  extends Exception {
+    public Minus3Error(){
+        super("Error -3");
+    }
+}
+class Minus4Error  extends Exception {
+    public Minus4Error(){
+        super("Error -4");
+    }
+}
+class Minus5Error  extends Exception {
+    public Minus5Error(){
+        super("Error -5");
+    }
+}
