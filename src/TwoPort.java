@@ -11,20 +11,15 @@ public abstract class TwoPort {
     char type;
     boolean isDraw = false ;
     static double dv , di , dt , t ;
+    double current, I_p, I_n;
+    double voltage;
     ArrayList<Properties> properties = new ArrayList<>();
 
     abstract double currentCalculator();
-
-    public int current(TwoPort twoPort){
-        int current = 0 ;
-
-        return current ;
-    }
-
-    public int voltage(TwoPort twoPort){
-        int voltage = 0 ;
-
-        return voltage ;
+    abstract double currentDvCalculator(double dv);
+    double voltageCalculator(double t){
+        voltage = startTerminal.voltage - endTerminal.voltage;
+        return voltage;
     }
 
     TwoPort(){}
@@ -35,6 +30,8 @@ public abstract class TwoPort {
         startNode = temp[1];
         endNode = temp[2];
         value = toDouble(temp[3]);
+        current = 0 ;
+        I_n = 0;
     }
 
    static double toDouble (String input){

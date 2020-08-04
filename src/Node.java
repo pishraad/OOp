@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Node extends Object{
     String name;
-    double[] voltage;
+    double voltage, V_n;
     boolean added ;
     boolean isGround = false ;
     int union ;
@@ -17,8 +17,8 @@ public class Node extends Object{
 
     Node(String name) {
         this.name = name;
-        //this.voltage = new double[1000] ;
-        //this.voltage[0] = 0.0 ;
+        this.voltage = 0 ;
+        this.V_n = 0 ;
         this.union = Integer.parseInt(name);
         if (name.equals("0")) {
             isGround = true ;

@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Solve {
-    ArrayList<TwoPort> elements = new ArrayList<>();
-    ArrayList<Node> nodes = new ArrayList<>() ;
-    ArrayList<Union> unions = new ArrayList<>() ;
+    ArrayList<TwoPort> elements;
+    ArrayList<Node> nodes;
+    ArrayList<Union> unions;
     double dv , di , dt , t ;
 
     Solve(ArrayList<TwoPort> elements, ArrayList<Node> nodes, ArrayList<Union> unions, double dv ,double di ,double dt ,double t){
@@ -17,9 +17,50 @@ public class Solve {
     }
 
     void solver(){
-        for(int time=0 ; time <= t ; time += dt){
+        for(double time=0 ; time <= t ; time += dt) {
             //check for errors
 
+            for(Union u : unions){
+
+                u.updateVoltage(time);
+
+
+                if(!u.mainNode.name.equals("0")){
+                    u.I = 0;
+                    u.I_p = 0;
+                    for(Node n : u.nodes){
+                        for(TwoPort e : n.connected){
+                            if(e.endNode.equals(n.name)){
+                                if(e.type == 'I'){
+                                    u.I += ((CurrentSource)e).currentCalculator(time);
+                                    u.I_p += ((CurrentSource)e).currentCalculator(time);
+                                }
+                                else {
+                                    u.I += e.currentCalculator();
+                                    u.I_p += e.currentDvCalculator(-dv);
+                                }
+                                }
+                            else{//possibility of error
+                                if(e.type == 'I'){
+                                    u.I -= ((CurrentSource)e).currentCalculator(time);
+                                    u.I_p -= ((CurrentSource)e).currentCalculator(time);
+                                }
+                                else {
+                                    u.I -= e.currentCalculator();
+                                    u.I_p -= e.currentDvCalculator(dv);
+                                }
+                            }
+                        }
+                    }
+                    for(Node n : u.nodes) {
+                        n.V_n = n.voltage;
+                    }
+                    u.mainNode.voltage += (Math.abs(u.I) - Math.abs(u.I_p)) * dv / di;
+                    u.updateVoltage(time);
+                }
+            }
+
+            //pro
         }
     }
 }

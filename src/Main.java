@@ -14,8 +14,9 @@ public class Main {
     public static void main(String[] arg)  {
 
         entrance();
-        //Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
-        //solve.solver();
+        Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
+        solve.solver();
+
 
         //Graphic graphic = new Graphic(nodes);
         //Graphic graphic = new Graphic(nodes);
@@ -83,6 +84,7 @@ public class Main {
     }
 
     static void entrance () {
+        //File file = new File("Test\\RIdc.txt") ;
         File file = new File("entrance.txt") ;
         BufferedReader in;
         try {

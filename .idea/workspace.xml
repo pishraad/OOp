@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd6e3980-5915-44c5-9277-c46f6f6eac45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Solve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/DVS_circuit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/Diode_circuit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/IVDC.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/LC_bandpass_circuit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/LC_bandpass_circuit2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/LC_bandpass_circuit3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/RC_circuit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/RIdc.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/RLCI_circuit.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/RLCVcircuit.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Capacitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Capacitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrentDependant.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CurrentSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Erors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Erors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Inductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inductor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Resistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Source.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solve.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TwoPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwoPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Union.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Union.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VoltageDependant.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VoltageSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VoltageSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596464099638</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="lots of changes, but not solve yet:(">
+      <created>1596527613182</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1596527613182</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,17 +226,19 @@
     <MESSAGE value="RVertical" />
     <MESSAGE value="graphic RLC" />
     <MESSAGE value="graphic RLC[1]" />
-    <option name="LAST_COMMIT_MESSAGE" value="graphic RLC[1]" />
+    <MESSAGE value="lots of changes, but not solve yet:(" />
+    <option name="LAST_COMMIT_MESSAGE" value="lots of changes, but not solve yet:(" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="142" key="#com.intellij.ide.util.MemberChooser" timestamp="1596440388552">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="574" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1596542246007">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="574" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596542246007" />
     <state x="574" y="142" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1596440388552" />
-    <state x="393" y="7" key="CommitChangelistDialog2" timestamp="1596464098949">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="414" y="14" key="CommitChangelistDialog2" timestamp="1596561849277">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="414" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596286664764" />
+    <state x="414" y="14" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1596561849277" />
     <state x="393" y="7" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1596464098949" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1596198420700">
       <screen x="0" y="0" width="1536" height="824" />
@@ -233,25 +249,25 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596261526849" />
     <state x="549" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1596429368311" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1596527561867">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1596561849295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596527561867" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
     <state width="1478" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1596527561867">
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1596561849295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596527561867" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
     <state width="1478" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1596527561867">
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1596561849295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596527561867" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
     <state width="1478" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1596527561867">
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1596561849295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596527561867" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
     <state width="1478" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1596527370695">
       <screen x="0" y="0" width="1536" height="824" />
@@ -273,10 +289,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="621" y="154" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1596461032209" />
-    <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1596464104448">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1596527618094">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595772769123" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596527618094" />
     <state x="361" y="152" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1596464104448" />
     <state x="465" y="247" key="com.intellij.ide.util.TipDialog" timestamp="1596520959810">
       <screen x="0" y="0" width="1536" height="864" />
@@ -288,9 +304,10 @@
     </state>
     <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1596022465471" />
     <state x="578" y="345" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1596028473647" />
-    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1596377540141">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="431" y="173" width="672" height="647" key="search.everywhere.popup" timestamp="1596541552058">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="431" y="173" width="672" height="647" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596541552058" />
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1596377540141" />
   </component>
 </project>

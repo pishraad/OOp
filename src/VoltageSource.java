@@ -7,13 +7,19 @@ public class VoltageSource extends Source {
         return 0;
     }
 
+    @Override
+    double currentDvCalculator(double dv) {
+        return 0;
+    }
+
     VoltageSource(String input) {
         super(input);
         type = 'V';
     }
 
     double voltageCalculator(double t){
-        return value + amplitude * Math.cos(2 * Math.PI * frequency * t + phase);
+        voltage = value + amplitude * Math.cos(2 * Math.PI * frequency * t + phase);
+        return voltage;
     }
 }
 
@@ -22,6 +28,16 @@ class CDVoltageSource extends CurrentDependant {
     @Override
     double currentCalculator() {
         return 0;
+    }
+
+    @Override
+    double currentDvCalculator(double dv) {
+        return 0;
+    }
+
+    double voltageCalculator(double t){
+        voltage = gain * (elementDependant.currentCalculator());
+        return voltage;
     }
 
     CDVoltageSource(String input) {
@@ -34,6 +50,16 @@ class VDVoltageSource extends VoltageDependant {
     @Override
     double currentCalculator() {
         return 0;
+    }
+
+    @Override
+    double currentDvCalculator(double dv) {
+        return 0;
+    }
+
+    double voltageCalculator(double t) {
+        voltage = gain * (startDependant.voltage - endDependant.voltage);
+        return voltage;
     }
 
     VDVoltageSource(String input) {

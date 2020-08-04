@@ -4,6 +4,11 @@ public class CurrentSource extends Source {
         return 0;
     }
 
+    @Override
+    double currentDvCalculator(double dv) {
+        return 0;
+    }
+
     CurrentSource(String input){
         super(input);
         type = 'I';
@@ -16,7 +21,12 @@ public class CurrentSource extends Source {
 class CDCurrentSource extends  CurrentDependant {
     @Override
     double currentCalculator() {
-        return 0;
+        return gain * (elementDependant.currentCalculator());
+    }
+
+    @Override
+    double currentDvCalculator(double dv) {
+        return gain * (elementDependant.currentCalculator());
     }
 
     CDCurrentSource(String input) {
@@ -28,7 +38,12 @@ class CDCurrentSource extends  CurrentDependant {
 class VDCurrentSource extends VoltageDependant {
     @Override
     double currentCalculator() {
-        return 0;
+        return gain * (startDependant.voltage - endDependant.voltage);
+    }
+
+    @Override
+    double currentDvCalculator(double dv) {
+        return gain * (startDependant.voltage - endDependant.voltage);
     }
 
     VDCurrentSource(String input) {

@@ -1,0 +1,10 @@
+di 100u
+dv 100u
+dt 100u
+Vin 1 0 sin 0 2 50 1ns
+$ sine voltage source between node 1 and gnd with freq 50Hz and peak value of 2V
+R1 1 2 50
+D1 2 3
+C1 3 0 1n
+R2 3 0 1K
+.tran 100ms

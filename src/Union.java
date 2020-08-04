@@ -6,6 +6,7 @@ public class Union {
     ArrayList<Node> nodes = new ArrayList<>();
     boolean visited;
     static double dv , di , dt , t ;
+    double I_n, I, I_p;
 
 
     Union(int name){
@@ -18,7 +19,7 @@ public class Union {
         while (!isDone) {
             isDone = true;
             for (TwoPort element : elements) {
-                if (element.type == 'V' || element.type == 'v' /*to be continued*/) {
+                if (element.type == 'V' || element.type == 'H' || element.type == 'E') {
                     if (element.startTerminal.union != element.endTerminal.union) {
                         isDone = false;
                         Node startTerminal = element.startTerminal;
@@ -65,6 +66,15 @@ public class Union {
             }
         }
         return unions;
+    }
+
+    void updateVoltage(double t){
+        for(Node n : nodes){
+            if(n.parentNode != null){
+                n.connector.voltageCalculator(t);
+                n.voltage = n.isConnectorInverse ? n.parentNode.voltage - n.connector.voltage : n.parentNode.voltage + n.connector.voltage;
+            }
+        }
     }
 
 }

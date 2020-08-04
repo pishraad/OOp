@@ -2,8 +2,13 @@ public class Capacitor extends TwoPort {
 
     @Override
     double currentCalculator() {
-        System.out.println("C");
-        return 0;
+        current = (this.value * (this.startTerminal.voltage - this.startTerminal.V_n - this.endTerminal.voltage + this.endTerminal.V_n))/dt;
+        return current;
+    }
+
+    @Override
+    double currentDvCalculator(double dv) {
+        return (this.value * (this.startTerminal.voltage - this.startTerminal.V_n - this.endTerminal.voltage + this.endTerminal.V_n + dv))/dt;
     }
 
     Capacitor(String input){
