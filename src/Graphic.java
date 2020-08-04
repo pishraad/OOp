@@ -40,8 +40,8 @@ public class Graphic {
             for (TwoPort j : i.connected){
                 if (!j.isDraw){
                     j.isDraw = true ;
-                    char[] element = {' ',' ',' '} ;
-                    element [0] = j.type ;
+                    String[] element = {" "," "," "} ;
+                    element [0] = j.name ;
                     int t = 1 ;
                     String anotherNode ;
                     if (i.name.equals(j.startNode))
@@ -51,7 +51,7 @@ public class Graphic {
                     for (TwoPort k : i.connected){
                         if ((k.endNode.equals(anotherNode) || k.startNode.equals(anotherNode) ) && !k.name.equals(j.name)){
                             k.isDraw = true ;
-                            element[t] = k.type ;
+                            element[t] = k.name ;
                             t++ ;
                         }
                     }
@@ -61,15 +61,12 @@ public class Graphic {
         }
 
 
-       // Rofoghi(100 , 100);
-        //node(nodes);
-
 
         A.setLayout(null);
         A.setVisible(true);
     }
 
-    public void drawElement(int i , int j ,char[] element){
+    public void drawElement(int i , int j ,String[] element){
 
         char verticalStraight = ' ' ;
         if (i==0 || j==0)
@@ -79,9 +76,9 @@ public class Graphic {
         else
             verticalStraight = 'V' ;
 
-        if (element[1]==' '){
+        if (element[1].equals(" ")){
 
-            if (element[0] == 'R' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'R' && verticalStraight == 'S'){
                  ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
                  JLabel E = new JLabel(e);
                  if (j>i)
@@ -90,7 +87,7 @@ public class Graphic {
                      E.setBounds((j%6)*100+100, 500-(j/6)*100,100,16);
                  A.add(E) ;
             }
-            else if (element[0] == 'R' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'R' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -100,7 +97,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'L' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'L' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -109,7 +106,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'L' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'L' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -119,7 +116,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'C' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'C' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -128,7 +125,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'C' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'C' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -138,7 +135,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'V' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'V' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V4.PNG","PNG") ;
@@ -151,7 +148,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'V' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'V' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V3.PNG","PNG") ;
@@ -165,7 +162,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'I' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'I' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I4.PNG","PNG") ;
@@ -178,7 +175,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'I' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'I' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I3.PNG","PNG") ;
@@ -192,7 +189,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[0] == 'E' || element[0] == 'H') && verticalStraight == 'S'){
+            if ((element[0].charAt(0) == 'E' || element[0].charAt(0) == 'H') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD4.PNG","PNG") ;
@@ -205,7 +202,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[0] == 'E' || element[0] == 'H') && verticalStraight == 'V'){
+            else if ((element[0].charAt(0) == 'E' || element[0].charAt(0) == 'H') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD3.PNG","PNG") ;
@@ -219,7 +216,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[0] == 'F' || element[0] == 'G') && verticalStraight == 'S'){
+            if ((element[0].charAt(0) == 'F' || element[0].charAt(0) == 'G') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID4.PNG","PNG") ;
@@ -232,7 +229,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[0] == 'F' || element[0] == 'G') && verticalStraight == 'V'){
+            else if ((element[0].charAt(0) == 'F' || element[0].charAt(0) == 'G') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID3.PNG","PNG") ;
@@ -246,13 +243,16 @@ public class Graphic {
                 A.add(E) ;
             }
 
+            JLabel namee = new JLabel(element[0]) ;
+            namee.setBounds(400,80,30,20);
+            A.add(namee) ;
 
         }
-        else if (element[2]==' '){
+        else if (element[2].equals(" ")){
 
 
 
-            if (element[0] == 'R' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'R' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -261,7 +261,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,16);
                 A.add(E) ;
             }
-            else if (element[0] == 'R' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'R' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -271,7 +271,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'L' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'L' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -280,7 +280,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'L' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'L' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -290,7 +290,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'C' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'C' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -299,7 +299,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'C' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'C' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -309,7 +309,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'V' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'V' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V4.PNG","PNG") ;
@@ -322,7 +322,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'V' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'V' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V3.PNG","PNG") ;
@@ -336,7 +336,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'I' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'I' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I4.PNG","PNG") ;
@@ -349,7 +349,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'I' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'I' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I3.PNG","PNG") ;
@@ -363,7 +363,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[0] == 'E' || element[0] == 'H') && verticalStraight == 'S'){
+            if ((element[0].charAt(0) == 'E' || element[0].charAt(0) == 'H') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD4.PNG","PNG") ;
@@ -376,7 +376,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[0] == 'E' || element[0] == 'H') && verticalStraight == 'V'){
+            else if ((element[0].charAt(0) == 'E' || element[0].charAt(0) == 'H') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD3.PNG","PNG") ;
@@ -390,7 +390,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[0] == 'F' || element[0] == 'G') && verticalStraight == 'S'){
+            if ((element[0].charAt(0) == 'F' || element[0].charAt(0) == 'G') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID4.PNG","PNG") ;
@@ -403,7 +403,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[0] == 'F' || element[0] == 'G') && verticalStraight == 'V'){
+            else if ((element[0].charAt(0) == 'F' || element[0].charAt(0) == 'G') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID3.PNG","PNG") ;
@@ -418,7 +418,7 @@ public class Graphic {
             }
 
 
-            if (element[1] == 'R' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'R' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -427,7 +427,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,16);
                 A.add(E) ;
             }
-            else if (element[1] == 'R' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'R' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -437,7 +437,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'L' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'L' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -446,7 +446,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'L' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'L' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -456,7 +456,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'C' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'C' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -465,7 +465,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'C' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'C' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -475,7 +475,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'V' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'V' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V4.PNG","PNG") ;
@@ -488,7 +488,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'V' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'V' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V3.PNG","PNG") ;
@@ -502,7 +502,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'I' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'I' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I4.PNG","PNG") ;
@@ -515,7 +515,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'I' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'I' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I3.PNG","PNG") ;
@@ -529,7 +529,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[1] == 'E' || element[1] == 'H') && verticalStraight == 'S'){
+            if ((element[1].charAt(0) == 'E' || element[1].charAt(0) == 'H') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD4.PNG","PNG") ;
@@ -542,7 +542,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[1] == 'E' || element[1] == 'H') && verticalStraight == 'V'){
+            else if ((element[1].charAt(0) == 'E' || element[1].charAt(0) == 'H') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD3.PNG","PNG") ;
@@ -556,7 +556,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[1] == 'F' || element[1] == 'G') && verticalStraight == 'S'){
+            if ((element[1].charAt(0) == 'F' || element[1].charAt(0) == 'G') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID4.PNG","PNG") ;
@@ -569,7 +569,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[1] == 'F' || element[1] == 'G') && verticalStraight == 'V'){
+            else if ((element[1].charAt(0) == 'F' || element[1].charAt(0) == 'G') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID3.PNG","PNG") ;
@@ -589,7 +589,7 @@ public class Graphic {
         else {
 
 
-            if (element[0] == 'R' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'R' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -598,7 +598,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,16);
                 A.add(E) ;
             }
-            else if (element[0] == 'R' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'R' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -608,7 +608,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'L' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'L' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -617,7 +617,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'L' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'L' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -627,7 +627,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'C' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'C' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -636,7 +636,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'C' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'C' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -646,7 +646,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'V' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'V' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V4.PNG","PNG") ;
@@ -659,7 +659,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'V' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'V' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V3.PNG","PNG") ;
@@ -673,7 +673,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[0] == 'I' && verticalStraight == 'S'){
+            if (element[0].charAt(0) == 'I' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I4.PNG","PNG") ;
@@ -686,7 +686,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[0] == 'I' && verticalStraight == 'V'){
+            else if (element[0].charAt(0) == 'I' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I3.PNG","PNG") ;
@@ -700,7 +700,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[0] == 'E' || element[0] == 'H') && verticalStraight == 'S'){
+            if ((element[0].charAt(0) == 'E' || element[0].charAt(0) == 'H') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD4.PNG","PNG") ;
@@ -713,7 +713,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[0] == 'E' || element[0] == 'H') && verticalStraight == 'V'){
+            else if ((element[0].charAt(0) == 'E' || element[0].charAt(0) == 'H') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD3.PNG","PNG") ;
@@ -727,7 +727,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[0] == 'F' || element[0] == 'G') && verticalStraight == 'S'){
+            if ((element[0].charAt(0) == 'F' || element[0].charAt(0) == 'G') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID4.PNG","PNG") ;
@@ -740,7 +740,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 480-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[0] == 'F' || element[0] == 'G') && verticalStraight == 'V'){
+            else if ((element[0].charAt(0) == 'F' || element[0].charAt(0) == 'G') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID3.PNG","PNG") ;
@@ -755,7 +755,7 @@ public class Graphic {
             }
 
 
-            if (element[1] == 'R' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'R' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -764,7 +764,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,16);
                 A.add(E) ;
             }
-            else if (element[1] == 'R' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'R' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -774,7 +774,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'L' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'L' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -783,7 +783,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'L' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'L' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -793,7 +793,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'C' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'C' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -802,7 +802,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'C' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'C' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -812,7 +812,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'V' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'V' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V4.PNG","PNG") ;
@@ -825,7 +825,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'V' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'V' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V3.PNG","PNG") ;
@@ -839,7 +839,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[1] == 'I' && verticalStraight == 'S'){
+            if (element[1].charAt(0) == 'I' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I4.PNG","PNG") ;
@@ -852,7 +852,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[1] == 'I' && verticalStraight == 'V'){
+            else if (element[1].charAt(0) == 'I' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I3.PNG","PNG") ;
@@ -866,7 +866,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[1] == 'E' || element[1] == 'H') && verticalStraight == 'S'){
+            if ((element[1].charAt(0) == 'E' || element[1].charAt(0) == 'H') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD4.PNG","PNG") ;
@@ -879,7 +879,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[1] == 'E' || element[1] == 'H') && verticalStraight == 'V'){
+            else if ((element[1].charAt(0) == 'E' || element[1].charAt(0) == 'H') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD3.PNG","PNG") ;
@@ -893,7 +893,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[1] == 'F' || element[1] == 'G') && verticalStraight == 'S'){
+            if ((element[1].charAt(0) == 'F' || element[1].charAt(0) == 'G') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID4.PNG","PNG") ;
@@ -906,7 +906,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 500-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[1] == 'F' || element[1] == 'G') && verticalStraight == 'V'){
+            else if ((element[1].charAt(0) == 'F' || element[1].charAt(0) == 'G') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID3.PNG","PNG") ;
@@ -922,7 +922,7 @@ public class Graphic {
 
 
 
-            if (element[2] == 'R' && verticalStraight == 'S'){
+            if (element[2].charAt(0) == 'R' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("R1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -931,7 +931,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 520-(j/6)*100,100,16);
                 A.add(E) ;
             }
-            else if (element[2] == 'R' && verticalStraight == 'V'){
+            else if (element[2].charAt(0) == 'R' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("R1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -941,7 +941,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[2] == 'L' && verticalStraight == 'S'){
+            if (element[2].charAt(0) == 'L' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("L1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -950,7 +950,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 520-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[2] == 'L' && verticalStraight == 'V'){
+            else if (element[2].charAt(0) == 'L' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("L1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -960,7 +960,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[2] == 'C' && verticalStraight == 'S'){
+            if (element[2].charAt(0) == 'C' && verticalStraight == 'S'){
                 ImageIcon e = new ImageIcon("C1Straight.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j>i)
@@ -969,7 +969,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 520-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[2] == 'C' && verticalStraight == 'V'){
+            else if (element[2].charAt(0) == 'C' && verticalStraight == 'V'){
                 ImageIcon e = new ImageIcon("C1Vertical.PNG","PNG") ;
                 JLabel E = new JLabel(e);
                 if (j<i)
@@ -979,7 +979,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[2] == 'V' && verticalStraight == 'S'){
+            if (element[2].charAt(0) == 'V' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V4.PNG","PNG") ;
@@ -992,7 +992,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 520-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[2] == 'V' && verticalStraight == 'V'){
+            else if (element[2].charAt(0) == 'V' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("V3.PNG","PNG") ;
@@ -1006,7 +1006,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if (element[2] == 'I' && verticalStraight == 'S'){
+            if (element[2].charAt(0) == 'I' && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I4.PNG","PNG") ;
@@ -1019,7 +1019,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 520-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if (element[2] == 'I' && verticalStraight == 'V'){
+            else if (element[2].charAt(0) == 'I' && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("I3.PNG","PNG") ;
@@ -1033,7 +1033,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[2] == 'E' || element[2] == 'H') && verticalStraight == 'S'){
+            if ((element[2].charAt(0) == 'E' || element[2].charAt(0) == 'H') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD4.PNG","PNG") ;
@@ -1046,7 +1046,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 520-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[2] == 'E' || element[2] == 'H') && verticalStraight == 'V'){
+            else if ((element[2].charAt(0) == 'E' || element[2].charAt(0) == 'H') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("VD3.PNG","PNG") ;
@@ -1060,7 +1060,7 @@ public class Graphic {
                 A.add(E) ;
             }
 
-            if ((element[2] == 'F' || element[2] == 'G') && verticalStraight == 'S'){
+            if ((element[2].charAt(0) == 'F' || element[2].charAt(0) == 'G') && verticalStraight == 'S'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID4.PNG","PNG") ;
@@ -1073,7 +1073,7 @@ public class Graphic {
                     E.setBounds((j%6)*100+100, 520-(j/6)*100,100,20);
                 A.add(E) ;
             }
-            else if ((element[2] == 'F' || element[2] == 'G') && verticalStraight == 'V'){
+            else if ((element[2].charAt(0) == 'F' || element[2].charAt(0) == 'G') && verticalStraight == 'V'){
                 ImageIcon e ;
                 if (j>i)
                     e = new ImageIcon("ID3.PNG","PNG") ;

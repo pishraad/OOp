@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd6e3980-5915-44c5-9277-c46f6f6eac45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Test/DVS_circuit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/Diode_circuit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/IVDC.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/LC_bandpass_circuit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/LC_bandpass_circuit2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/LC_bandpass_circuit3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/RC_circuit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/RIdc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/RLCI_circuit.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/RLCVcircuit.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Capacitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Capacitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrentSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resistance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwoPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwoPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Union.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Union.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VoltageSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VoltageSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,31 +225,31 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1596198420700" />
-    <state x="549" y="175" key="FileChooserDialogImpl" timestamp="1596429368311">
+    <state x="549" y="175" key="FileChooserDialogImpl" timestamp="1596568341166">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596261526849" />
-    <state x="549" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1596429368311" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1596561849295">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="549" y="175" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1596568341166" />
+    <state width="1478" height="223" key="GridCell.Tab.0.bottom" timestamp="1596568240644">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
-    <state width="1478" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1596561849295">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1478" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1596568240644" />
+    <state width="1478" height="223" key="GridCell.Tab.0.center" timestamp="1596568240644">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
-    <state width="1478" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1596561849295">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1478" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1596568240644" />
+    <state width="1478" height="223" key="GridCell.Tab.0.left" timestamp="1596568240644">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
-    <state width="1478" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1596561849295">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1478" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1596568240644" />
+    <state width="1478" height="223" key="GridCell.Tab.0.right" timestamp="1596568240644">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596561849295" />
-    <state width="1478" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1596464126013" />
+    <state width="1478" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1596568240644" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1596527370695">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
