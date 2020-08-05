@@ -4,7 +4,7 @@ public abstract class Source extends TwoPort {
     double phase;
 
     Source(String input) {
-        input = input.replaceAll("\\s+"," ");
+        input = input.replaceAll("\\s+", " ");
         String[] temp = input.split(" ");
         name = temp[0];
         type = temp[0].charAt(0);
@@ -43,8 +43,8 @@ abstract class CurrentDependant extends TwoPort {
     TwoPort elementDependant;
     double gain;
 
-    CurrentDependant(String input){
-        input = input.replaceAll("\\s+"," ");
+    CurrentDependant(String input) {
+        input = input.replaceAll("\\s+", " ");
         String[] temp = input.split(" ");
         name = temp[0];
         startNode = temp[1];
