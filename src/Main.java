@@ -13,7 +13,7 @@ public class Main {
     static ArrayList<VoltageDependant> voltageDependants = new ArrayList<>();
     static double dv, di, dt, t;
 
-    public static void main(String[] arg) {
+    public static void main(String[] arg) throws Minus1Error {
 
         entrance();
         Graphic graphic = new Graphic(nodes) ;
@@ -61,7 +61,7 @@ public class Main {
 
     }
 
-    static void entrance() {
+    static void entrance() throws Minus1Error {
         File file = new File("Test\\RIdc.txt");
         //File file = new File("D:\\University\\98-2\\OOP\\project\\test\\test4.txt") ;
         BufferedReader in;
@@ -180,12 +180,15 @@ public class Main {
                     }
 
                     if (!correct)
-                        System.out.println("eror line .....");
+                        System.out.println("error line .....");
                 }
 
             }
-            if (!eror11 || !eror12 || !eror13 || !eror14)
-                System.out.println("error -1");
+            if (!eror11 || !eror12 || !eror13 || !eror14){
+                throw new Minus1Error();
+                }
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
