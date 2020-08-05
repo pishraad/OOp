@@ -14,9 +14,12 @@ public class Main {
     public static void main(String[] arg)  {
 
         entrance();
-        Graphic graphic = new Graphic(nodes) ;
-     //   Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
-       // solve.solver();
+        //Graphic graphic = new Graphic(nodes) ;
+        Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
+        solve.solver();
+        int count = (int) (t/dt);
+        System.out.println(count);
+        solve.fileWriter(count/100);
 
 
 //        Graphic graphic = new Graphic(nodes);
@@ -58,35 +61,9 @@ public class Main {
 
     }
 
-    static void fileWriter(){
-
-        try{
-            // Create file
-            FileWriter fstream = new FileWriter(System.currentTimeMillis() + "out.txt");
-            BufferedWriter out = new BufferedWriter(fstream);
-
-            int whichNode = 0 ;
-            for (int i=0;i<nodes.size();i++){
-                for (Node j : nodes){
-                    if (j.name.equals(String.valueOf(whichNode))){
-                        out.write(whichNode + " " /*voltages */);
-                    }
-                }
-                whichNode ++ ;
-                out.write("\n");
-            }
-
-            //Close the output stream
-            out.close();
-        }catch (Exception e){//Catch exception if any
-            System.err.println("Error: " + e.getMessage());
-        }
-
-    }
-
     static void entrance () {
-        //File file = new File("Test\\RIdc.txt") ;
-        File file = new File("entrance.txt") ;
+        File file = new File("Test\\RIdc.txt") ;
+        //File file = new File("entrance.txt") ;
         BufferedReader in;
         try {
             in = new BufferedReader(new FileReader(file));

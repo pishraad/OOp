@@ -15,18 +15,33 @@ public class CurrentSource extends Source {
     }
 
     double currentCalculator(double t){
-        return value + amplitude * Math.cos(2 * Math.PI * frequency * t + phase);
+        current = value + amplitude * Math.cos(2 * Math.PI * frequency * t + phase);
+        return current;
     }
 }
 class CDCurrentSource extends  CurrentDependant {
     @Override
     double currentCalculator() {
-        return gain * (elementDependant.currentCalculator());
+        switch (elementDependant.type) {
+            case 'I':
+                elementDependant.current = ((CurrentSource) elementDependant).currentCalculator(t);
+                break;
+            case 'V':
+            case 'H':
+            case 'E':
+                elementDependant.current = VoltageSource.VSCurrentCalculator(elementDependant, t);
+                break;
+            default:
+                elementDependant.current = elementDependant.currentCalculator();
+                break;
+        }
+        current = gain * (elementDependant.current);
+        return current;
     }
 
     @Override
     double currentDvCalculator(double dv) {
-        return gain * (elementDependant.currentCalculator());
+        return 0 ;
     }
 
     CDCurrentSource(String input) {
@@ -38,7 +53,8 @@ class CDCurrentSource extends  CurrentDependant {
 class VDCurrentSource extends VoltageDependant {
     @Override
     double currentCalculator() {
-        return gain * (startDependant.voltage - endDependant.voltage);
+        current = gain * (startDependant.voltage - endDependant.voltage);
+        return current;
     }
 
     @Override

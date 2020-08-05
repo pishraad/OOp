@@ -12,6 +12,29 @@ public class VoltageSource extends Source {
         return 0;
     }
 
+    static double VSCurrentCalculator(TwoPort voltageSource, double time) {
+        voltageSource.current = 0;
+        for(TwoPort e : voltageSource.startTerminal.connected){
+            if(voltageSource.startNode.equals(e.endNode)){
+                if(e.type == 'I'){
+                    voltageSource.current += ((CurrentSource)e).currentCalculator(time);
+                }
+                else {
+                    voltageSource.current += e.currentCalculator();
+                }
+            }
+            else{//possibility of error
+                if(e.type == 'I'){
+                    voltageSource.current -= ((CurrentSource)e).currentCalculator(time);
+                }
+                else {
+                    voltageSource.current -= e.currentCalculator();
+                }
+            }
+        }
+        return voltageSource.current;
+    }
+
     VoltageSource(String input) {
         super(input);
         type = 'V';
@@ -21,6 +44,8 @@ public class VoltageSource extends Source {
         voltage = value + amplitude * Math.cos(2 * Math.PI * frequency * t + phase);
         return voltage;
     }
+
+
 }
 
 class CDVoltageSource extends CurrentDependant {
@@ -36,7 +61,16 @@ class CDVoltageSource extends CurrentDependant {
     }
 
     double voltageCalculator(double t){
-        voltage = gain * (elementDependant.currentCalculator());
+        if(elementDependant.type == 'I'){
+            elementDependant.current = ((CurrentSource)elementDependant).currentCalculator(t);
+        }
+        else if(elementDependant.type == 'V' || elementDependant.type == 'H' || elementDependant.type == 'E'){
+            elementDependant.current = VoltageSource.VSCurrentCalculator(elementDependant,t);
+        }
+        else{
+            elementDependant.current = elementDependant.currentCalculator();
+        }
+        voltage = gain * (elementDependant.current);
         return voltage;
     }
 

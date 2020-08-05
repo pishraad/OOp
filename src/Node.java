@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Node extends Object{
     String name;
     double voltage, V_n;
+    ArrayList<Properties> properties = new ArrayList<>();
     boolean added ;
     boolean isGround = false ;
     int union ;
