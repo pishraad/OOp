@@ -2,16 +2,16 @@ import java.util.ArrayList;
 
 public class Erors {
 
-    public void eror2(ArrayList<TwoPort> element, ArrayList<Node> nodes) {
+    public void eror2(ArrayList<TwoPort> element, ArrayList<Node> nodes) throws Minus2Error {
 
         for (TwoPort n : element) {
-            if (n.type == 'C') { // || n == ...
+            if (n.type == 'I' || n.type == 'G' || n.type == 'F') {
                 for (Node i : nodes) {
                     if (n.startNode.equals(i.name)) {
                         if (i.neighbor.size() == 2) {
                             if (i.connected.get(0).type == 'C' && i.connected.get(1).type == 'C') {
                                 if (i.connected.get(0).value != i.connected.get(1).value) {
-                                    Minus2Error minus2Error = new Minus2Error();
+                                    throw new Minus2Error();
                                 }
                             }
                         }
@@ -21,13 +21,13 @@ public class Erors {
         }
 
         for (TwoPort n : element) {
-            if (n.type == 'C') { // || n == ...
+            if (n.type == 'I' || n.type == 'G' || n.type == 'F') {
                 for (Node i : nodes) {
                     if (n.endNode.equals(i.name)) {
                         if (i.neighbor.size() == 2) {
                             if (i.connected.get(0).type == 'C' && i.connected.get(1).type == 'C') {
                                 if (i.connected.get(0).value != i.connected.get(1).value) {
-                                    Minus2Error minus2Error = new Minus2Error();
+                                    throw new Minus2Error();
                                 }
                             }
                         }
@@ -39,15 +39,15 @@ public class Erors {
     }
 
 
-    public void eror3(ArrayList<TwoPort> element, ArrayList<Node> nodes) {
+    public void eror3(ArrayList<TwoPort> element, ArrayList<Node> nodes) throws Minus3Error {
 
         for (TwoPort n : element) {
-            if (n.type == 'V') { // || n == ...
+            if (n.type == 'V' || n.type == 'H' || n.type == 'E') {
                 for (TwoPort i : element) {
-                    if (i.type == 'V') { // || n == ...
+                    if (i.type == 'V' || i.type == 'H' || i.type == 'E') {
 
                         if ((n.startNode.equals(i.startNode) && n.endNode.equals(i.endNode)) || (n.startNode.equals(i.endNode) && n.endNode.equals(i.startNode))) {
-                            Minus3Error minus3Error = new Minus3Error();
+                            throw new Minus3Error();
                         }
 
                     }
@@ -59,7 +59,7 @@ public class Erors {
     }
 
 
-    public void eror4(ArrayList<Node> nodes) {
+    public void eror4(ArrayList<Node> nodes) throws Minus4Error {
 
         boolean eror = false;
         boolean existingGround = false;
@@ -83,7 +83,7 @@ public class Erors {
             eror = true;
 
         if (eror)
-            System.out.println("eror -4");
+            throw new Minus4Error() ;
 
     }
 

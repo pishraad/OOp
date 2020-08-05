@@ -61,7 +61,7 @@ public class Main {
 
     }
 
-    static void entrance() throws Minus1Error {
+    static void entrance() {
         File file = new File("Test\\RIdc.txt");
         //File file = new File("D:\\University\\98-2\\OOP\\project\\test\\test4.txt") ;
         BufferedReader in;
@@ -81,7 +81,7 @@ public class Main {
                         correct = true;
                         Resistance resistance = new Resistance(temp);
                         if ((resistance.value < 0)) // || reshte be jaye adad || adam tatbigh ba for gereftan
-                            System.out.println("eror line .....");
+                            System.out.println("error " + lineNumber);
                         else {
                             elements.add(resistance);
                             Node.addNode(elements.get(elements.size() - 1), nodes);
@@ -92,7 +92,7 @@ public class Main {
                         correct = true;
                         Capacitor capacitor = new Capacitor(temp);
                         if (capacitor.value < 0)
-                            System.out.println("eror line .....");
+                            System.out.println("error " + lineNumber);
                         else {
                             elements.add(capacitor);
                             Node.addNode(elements.get(elements.size() - 1), nodes);
@@ -103,7 +103,7 @@ public class Main {
                         correct = true;
                         Inductor inductor = new Inductor(temp);
                         if (inductor.value < 0)
-                            System.out.println("eror line .....");
+                            System.out.println("error " + lineNumber);
                         else {
                             elements.add(inductor);
                             Node.addNode(elements.get(elements.size() - 1), nodes);
@@ -180,7 +180,7 @@ public class Main {
                     }
 
                     if (!correct)
-                        System.out.println("error line .....");
+                        System.out.println("error " + lineNumber);
                 }
 
             }

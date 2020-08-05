@@ -18,7 +18,7 @@ public class Solve {
         this.t = t;
     }
 
-    void solver() {
+    void solver() throws Minus2Error, Minus3Error {
         for (double time = 0; time <= t; time += dt) {
             Erors erors = new Erors();
             erors.eror2(elements, nodes);
