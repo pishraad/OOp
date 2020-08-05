@@ -11,8 +11,7 @@ public class Erors {
                        if (i.neighbor.size()==2){
                          if (i.connected.get(0).type == 'C' && i.connected.get(1).type == 'C'){
                              if (i.connected.get(0).value != i.connected.get(1).value){
-                                 System.out.println("Eror -2");
-                                 //Stop
+                                 Minus2Error minus2Error = new Minus2Error() ;
                              }
                          }
                        }
@@ -28,8 +27,7 @@ public class Erors {
                         if (i.neighbor.size()==2){
                             if (i.connected.get(0).type == 'C' && i.connected.get(1).type == 'C'){
                                 if (i.connected.get(0).value != i.connected.get(1).value){
-                                    System.out.println("Eror -2");
-                                    //Stop
+                                    Minus2Error minus2Error = new Minus2Error() ;
                                 }
                             }
                         }
@@ -49,8 +47,7 @@ public class Erors {
                     if (i.type == 'V') { // || n == ...
 
                         if ((n.startNode.equals(i.startNode) && n.endNode.equals(i.endNode)) || (n.startNode.equals(i.endNode) && n.endNode.equals(i.startNode))){
-                            System.out.println("Eror -3");
-                            //stop
+                            Minus3Error minus3Error = new Minus3Error() ;
                         }
 
                     }

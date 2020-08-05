@@ -18,7 +18,10 @@ public class Solve {
 
     void solver(){
         for(double time=0 ; time <= t ; time += dt) {
-            //check for errors
+            Erors erors = new Erors() ;
+            erors.eror2(elements,nodes);
+            erors.eror3(elements,nodes);
+            erors.eror4(nodes);
 
             for(Union u : unions){
 

@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] arg)  {
 
         entrance();
+        Graphic graphic = new Graphic(nodes) ;
      //   Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
        // solve.solver();
 
@@ -202,7 +203,6 @@ public class Main {
                 }
 
             }
-            //Graphic graphic = new Graphic(nodes);
             if (!eror11 || !eror12 || !eror13 || !eror14)
                 System.out.println("eror -1");
 

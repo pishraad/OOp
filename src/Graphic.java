@@ -76,6 +76,7 @@ public class Graphic {
         else
             verticalStraight = 'V' ;
 
+
         if (element[1].equals(" ")){
 
             if (element[0].charAt(0) == 'R' && verticalStraight == 'S'){
@@ -244,7 +245,19 @@ public class Graphic {
             }
 
             JLabel namee = new JLabel(element[0]) ;
-            namee.setBounds(400,80,30,20);
+            if (verticalStraight == 'S') {
+                if (j>i)
+                    namee.setBounds((i % 6) * 100 + 140, 470 - (i / 6) * 100, 40, 30);
+                else
+                    namee.setBounds((j % 6) * 100 + 140, 470 - (i / 6) * 100, 40, 30);
+            }
+            else{
+                if (j>i)
+                    namee.setBounds((i%6)*100+120, 530-(j/6)*100,40,30);
+                else
+                    namee.setBounds((i%6)*100+120, 530-(i/6)*100,40,30);
+            }
+
             A.add(namee) ;
 
         }
@@ -582,6 +595,32 @@ public class Graphic {
                     E.setBounds((j%6)*100+95, 500-(j/6)*100,20,100);
                 A.add(E) ;
             }
+
+            JLabel name1 = new JLabel(element[0]) ;
+            JLabel name2 = new JLabel(element[1]) ;
+            if (verticalStraight == 'S'){
+                if (j>i) {
+                    name1.setBounds((i % 6) * 100 + 140, 515 - (i / 6) * 100, 40, 30);
+                    name2.setBounds((i % 6) * 100 + 140, 460 - (i / 6) * 100, 40, 30);
+                }
+                else {
+                    name1.setBounds((j % 6) * 100 + 140, 515 - (i / 6) * 100, 40, 30);
+                    name2.setBounds((j % 6) * 100 + 140, 460 - (i / 6) * 100, 40, 30);
+                }
+            }
+
+            else {
+                if (j>i) {
+                    name1.setBounds((i % 6) * 100 + 55, 530 - (j / 6) * 100, 40, 30);
+                    name2.setBounds((i % 6) * 100 + 120, 530 - (j / 6) * 100, 40, 30);
+                }
+                else{
+                    name1.setBounds((i % 6) * 100 + 55, 530 - (i / 6) * 100, 40, 30);
+                    name2.setBounds((i % 6) * 100 + 120, 530 - (i / 6) * 100, 40, 30);
+                }
+            }
+            A.add(name1) ;
+            A.add(name2) ;
 
 
         }
@@ -1086,6 +1125,38 @@ public class Graphic {
                     E.setBounds((j%6)*100+115, 500-(j/6)*100,20,100);
                 A.add(E) ;
             }
+
+            JLabel name1 = new JLabel(element[0]) ;
+            JLabel name2 = new JLabel(element[1]) ;
+            JLabel name3 = new JLabel(element[2]) ;
+            if (verticalStraight == 'S'){
+                if (j>i) {
+                    name1.setBounds((i % 6) * 100 + 140, 460 - (i / 6) * 100, 40, 30);
+                    name2.setBounds((i % 6) * 100 + 140, 530 - (i / 6) * 100, 40, 30);
+                    name3.setBounds((i % 6) * 100 + 140, 540 - (i / 6) * 100, 40, 30);
+                }
+                else {
+                    name1.setBounds((j % 6) * 100 + 140, 460 - (i / 6) * 100, 40, 30);
+                    name2.setBounds((j % 6) * 100 + 140, 530 - (i / 6) * 100, 40, 30);
+                    name3.setBounds((j % 6) * 100 + 140, 540 - (i / 6) * 100, 40, 30);
+                }
+            }
+
+            else {
+                if (i>j) {
+                    name1.setBounds((i % 6) * 100 + 40, 530 - (i / 6) * 100, 40, 30);
+                    name2.setBounds((i % 6) * 100 + 55, 530 - (i / 6) * 100, 40, 30);
+                    name3.setBounds((i % 6) * 100 + 135, 530 - (i / 6) * 100, 40, 30);
+                }
+                else{
+                    name1.setBounds((i % 6) * 100 + 40, 530 - (j / 6) * 100, 40, 30);
+                    name2.setBounds((i % 6) * 100 + 55, 530 - (j / 6) * 100, 40, 30);
+                    name3.setBounds((i % 6) * 100 + 135, 530 - (j / 6) * 100, 40, 30);
+                }
+            }
+            A.add(name1) ;
+            A.add(name2) ;
+            A.add(name3) ;
 
 
         }
