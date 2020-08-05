@@ -16,11 +16,11 @@ public class Main {
     public static void main(String[] arg) {
 
         entrance();
-        //Graphic graphic = new Graphic(nodes) ;
-        Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
-        solve.solver();
-        int iterCount = (int) (t / dt);
-        solve.fileWriter(iterCount / 100);
+        Graphic graphic = new Graphic(nodes) ;
+        //Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
+        //solve.solver();
+        //int iterCount = (int) (t / dt);
+        //solve.fileWriter(iterCount / 100);
 
 
 //        Graphic graphic = new Graphic(nodes);
@@ -68,9 +68,12 @@ public class Main {
         try {
             in = new BufferedReader(new FileReader(file));
             String temp;
+            int lineNumber = 0;
             boolean eror11 = false, eror12 = false, eror13 = false, eror14 = false;
-
-            while (!(temp = in.readLine()).equals("END")) {
+            boolean isEnded = false;
+            while (!isEnded) {
+                temp = in.readLine();
+                lineNumber++;
                 if (temp.charAt(0) != '*') {
 
                     boolean correct = false;
@@ -173,6 +176,7 @@ public class Main {
                         correct = true;
                         temp = temp.substring(5);
                         t = TwoPort.toDouble(temp.trim());
+                        isEnded = true;
                     }
 
                     if (!correct)
@@ -181,7 +185,7 @@ public class Main {
 
             }
             if (!eror11 || !eror12 || !eror13 || !eror14)
-                System.out.println("eror -1");
+                System.out.println("error -1");
 
         } catch (IOException e) {
             e.printStackTrace();
