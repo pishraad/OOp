@@ -1,3 +1,6 @@
+import org.knowm.xchart.*;
+import org.knowm.xchart.style.markers.SeriesMarkers;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -5,6 +8,38 @@ import java.util.ArrayList;
 
 public class Graphic {
     JFrame A;
+
+    static void drawChart(ArrayList<Properties> properties) {
+        int count = properties.size();
+        double[] xData = new double[count] ;
+        double[] voltageData = new double[count] ;
+        double[] currentData = new double[count] ;
+        double[] powerData = new double[count] ;
+        for(int i = 0 ; i<count ; i++){
+            xData[i] = properties.get(i).time;
+            voltageData[i] = properties.get(i).voltage;
+            currentData[i] = properties.get(i).current;
+            powerData[i] = properties.get(i).power;
+        }
+
+
+        // Create Chart
+        XYChart chart1 = QuickChart.getChart("Voltage", "time", "voltage", "voltage(t)", xData, voltageData);
+        XYChart chart2 = QuickChart.getChart("Current", "time", "current", "current(t)", xData, currentData);
+        XYChart chart3 = QuickChart.getChart("Power", "time", "power", "power(t)", xData, powerData);
+
+        //XYChart chart = new XYChartBuilder().xAxisTitle("time").yAxisTitle("voltage").width(600).height(400).build();
+        //chart.getStyler().setYAxisMin(-10.0);
+        //chart.getStyler().setYAxisMax(10.0);
+        //XYSeries series = chart.addSeries("voltage",xData,voltageData);
+        //series.setMarker(SeriesMarkers.NONE);
+
+        // Show it
+        new SwingWrapper(chart1).displayChart();
+        new SwingWrapper(chart2).displayChart();
+        new SwingWrapper(chart3).displayChart();
+
+    }
 
 
     Graphic(ArrayList<Node> nodes) {

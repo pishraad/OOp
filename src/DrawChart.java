@@ -1,9 +1,0 @@
-public class DrawChart {
-
-    DrawChart() {
-
-
-    }
-
-}
-

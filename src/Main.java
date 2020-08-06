@@ -1,3 +1,7 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,21 +16,74 @@ public class Main {
     static ArrayList<CurrentDependant> currentDependants = new ArrayList<>();
     static ArrayList<VoltageDependant> voltageDependants = new ArrayList<>();
     static double dv, di, dt, t;
+    static boolean isRun = false;
 
-    public static void main(String[] arg) throws Minus1Error {
+
+    public static void main(String[] arg) throws Exception {
+
+        /*JFrame entrance = new JFrame("Entrance");
+        entrance.setSize(600,800);
+        entrance.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        entrance.setLocationRelativeTo(null);
+        entrance.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10,10,10,10);
+        JButton run = new JButton("RUN");
+        run.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    entrance();
+                }catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(entrance, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
+                Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
+                try {
+                    solve.solver();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(entrance, ex.getMessage(), "Error", JOptionPane.INFORMATION_MESSAGE);
+                }
+                int iterCount = (int) (t / dt);
+                solve.fileWriter(iterCount / 100);
+                Graphic graphic = new Graphic(nodes) ;
+            }
+        });
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        entrance.add(run , gbc);
+
+        JButton draw = new JButton("DRAW");
+        draw.addActionListener(new DrawAction());
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        entrance.add(draw , gbc);
+
+        entrance.setVisible(true);*/
 
         entrance();
+        Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
+        solve.solver();
+        int iterCount = (int) (t / dt);
+        solve.fileWriter(iterCount / 100);
         Graphic graphic = new Graphic(nodes) ;
-        //Solve solve = new Solve(elements, nodes, unions, dv, di, dt, t);
-        //solve.solver();
-        //int iterCount = (int) (t / dt);
-        //solve.fileWriter(iterCount / 100);
+        String[] elementList1 = new String[elements.size()];
+        for(int i=0 ; i<elements.size() ; i++){
+            elementList1[i] = elements.get(i).name;
+        }
+        String chosen = (String) JOptionPane.showInputDialog(new JFrame(), "Choose the element", "Element choosing", JOptionPane.PLAIN_MESSAGE,null, elementList1, elementList1[0]);
+        for(TwoPort el : elements){
+            if(el.name.equals(chosen)){
+                Graphic.drawChart(el.properties);
+            }
+        }
 
 
-//        Graphic graphic = new Graphic(nodes);
-        //Graphic graphic = new Graphic(nodes);
-        //char[] element = {'R',' ',' '} ;
-        //graphic.drawElement(0,6,element);
+
+
+
+
 
 
 //        Scanner consool = new Scanner(System.in) ;
@@ -61,15 +118,24 @@ public class Main {
 
     }
 
-    static void entrance() {
-        File file = new File("Test\\RIdc.txt");
-        //File file = new File("D:\\University\\98-2\\OOP\\project\\test\\test4.txt") ;
+
+    static void entrance() throws Minus1Error, Exception {
+        isRun = true;
+        //File file = new File("Test\\RIdc.txt");
+        //File file = new File("Test\\RC_circuit.txt");
+        //File file = new File("Test\\RLCI_circuit.txt");
+        //File file = new File("Test\\RLCVcircuit.txt");
+        File file = new File("Test\\DVS_circuit.txt");
+        //File file = new File("Test\\LC_bandpass_circuit.txt");
+        //File file = new File("Test\\LC_bandpass_circuit2.txt");
+        //File file = new File("Test\\LC_bandpass_circuit3.txt");
+        //File file = new File("Test\\IVDC.txt");
         BufferedReader in;
         try {
             in = new BufferedReader(new FileReader(file));
             String temp;
             int lineNumber = 0;
-            boolean eror11 = false, eror12 = false, eror13 = false, eror14 = false;
+            boolean eror11 = false, eror12 = false, eror13 = false, error4 = false;
             boolean isEnded = false;
             while (!isEnded) {
                 temp = in.readLine();
@@ -172,19 +238,19 @@ public class Main {
                     }
 
                     if (temp.startsWith(".tran")) {
-                        eror14 = true;
                         correct = true;
                         temp = temp.substring(5);
                         t = TwoPort.toDouble(temp.trim());
                         isEnded = true;
                     }
 
-                    if (!correct)
-                        System.out.println("error " + lineNumber);
+                    if (!correct){
+                        System.out.println("error in line: " + lineNumber);
+                    }
                 }
 
             }
-            if (!eror11 || !eror12 || !eror13 || !eror14){
+            if (!eror11 || !eror12 || !eror13){
                 throw new Minus1Error();
                 }
 
@@ -212,4 +278,25 @@ public class Main {
         unions = Union.unionMaker(elements, nodes);
     }
 
+    static class DrawAction implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            if(isRun){
+                String[] elementList1 = new String[elements.size()];
+                for(int i=0 ; i<elements.size() ; i++){
+                    elementList1[i] = elements.get(i).name;
+                }
+                String chosen = (String) JOptionPane.showInputDialog(new JFrame(), "Choose the element", "Element choosing", JOptionPane.PLAIN_MESSAGE,null, elementList1, elementList1[0]);
+                for(TwoPort el : elements){
+                    if(el.name.equals(chosen)){
+                        Graphic.drawChart(el.properties);
+                    }
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(new JFrame(), "run the circuit first", "Error", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    }
 }
