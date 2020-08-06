@@ -1,7 +1,7 @@
 di 100u
 dv 100u
 dt 0.01u
-Vin 1 0 sin 0 1 1Meg 1ns
+Vin 1 0  0 1 1M -1.5707
 L1 1 2 10u
 C1 2 3 1u
 L3 3 0 10u
