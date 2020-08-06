@@ -124,9 +124,9 @@ public class Main {
         //File file = new File("Test\\RIdc.txt");
         //File file = new File("Test\\RC_circuit.txt");
         //File file = new File("Test\\RLCI_circuit.txt");
-        File file = new File("Test\\RLCVcircuit.txt");
+        //File file = new File("Test\\RLCVcircuit.txt");
         //File file = new File("Test\\DVS_circuit.txt");
-        //File file = new File("Test\\LC_bandpass_circuit.txt");
+        File file = new File("Test\\LC_bandpass_circuit.txt");
         //File file = new File("Test\\LC_bandpass_circuit2.txt");
         //File file = new File("Test\\LC_bandpass_circuit3.txt");
         //File file = new File("Test\\IVDC.txt");
@@ -256,7 +256,7 @@ public class Main {
 
 
 
-        } catch (IOException e) {
+        } catch (IOException | Minus1Error e) {
             e.printStackTrace();
         }
         for (CurrentDependant currentDependant : currentDependants) {

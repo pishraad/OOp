@@ -45,11 +45,11 @@ public class Erors {
             if (n.type == 'V' || n.type == 'H' || n.type == 'E') {
                 for (TwoPort i : element) {
                     if (i.type == 'V' || i.type == 'H' || i.type == 'E') {
-
-                        if ((n.startNode.equals(i.startNode) && n.endNode.equals(i.endNode)) || (n.startNode.equals(i.endNode) && n.endNode.equals(i.startNode))) {
-                            throw new Minus3Error();
+                        if (!i.name.equals(n.name)) {
+                            if ((n.startNode.equals(i.startNode) && n.endNode.equals(i.endNode)) || (n.startNode.equals(i.endNode) && n.endNode.equals(i.startNode))) {
+                                throw new Minus3Error();
+                            }
                         }
-
                     }
                 }
 

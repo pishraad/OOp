@@ -1,5 +1,5 @@
-import org.knowm.xchart.*;
-import org.knowm.xchart.style.markers.SeriesMarkers;
+//import org.knowm.xchart.*;
+//import org.knowm.xchart.style.markers.SeriesMarkers;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -24,9 +24,9 @@ public class Graphic {
 
 
         // Create Chart
-        XYChart chart1 = QuickChart.getChart("Voltage", "time", "voltage", "voltage(t)", xData, voltageData);
-        XYChart chart2 = QuickChart.getChart("Current", "time", "current", "current(t)", xData, currentData);
-        XYChart chart3 = QuickChart.getChart("Power", "time", "power", "power(t)", xData, powerData);
+//        XYChart chart1 = QuickChart.getChart("Voltage", "time", "voltage", "voltage(t)", xData, voltageData);
+//        XYChart chart2 = QuickChart.getChart("Current", "time", "current", "current(t)", xData, currentData);
+//        XYChart chart3 = QuickChart.getChart("Power", "time", "power", "power(t)", xData, powerData);
 
         //XYChart chart = new XYChartBuilder().xAxisTitle("time").yAxisTitle("voltage").width(600).height(400).build();
         //chart.getStyler().setYAxisMin(-10.0);
@@ -35,9 +35,9 @@ public class Graphic {
         //series.setMarker(SeriesMarkers.NONE);
 
         // Show it
-        new SwingWrapper(chart1).displayChart();
-        new SwingWrapper(chart2).displayChart();
-        new SwingWrapper(chart3).displayChart();
+//        new SwingWrapper(chart1).displayChart();
+//        new SwingWrapper(chart2).displayChart();
+//        new SwingWrapper(chart3).displayChart();
 
     }
 
